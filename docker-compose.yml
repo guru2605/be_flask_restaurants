@@ -1,0 +1,11 @@
+flask:
+  build: .
+  command: flask run --host=0.0.0.0 --port=5000
+  ports:
+    - "5000:5000"
+  volumes:
+    - .:/app
+  links:
+    - db
+db:
+  image: mongo:4.2
